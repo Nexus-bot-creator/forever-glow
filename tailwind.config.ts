@@ -57,6 +57,29 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom romantic colors
+        'rose-gold': "hsl(var(--rose-gold))",
+        'deep-purple': "hsl(var(--deep-purple))",
+        'electric-blue': "hsl(var(--electric-blue))",
+        'warm-pink': "hsl(var(--warm-pink))",
+        'sunset-orange': "hsl(var(--sunset-orange))",
+        'lavender': "hsl(var(--lavender))",
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-romantic': 'var(--gradient-romantic)',
+        'gradient-cosmic': 'var(--gradient-cosmic)',
+        'gradient-sunset': 'var(--gradient-sunset)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
+      boxShadow: {
+        'romantic': 'var(--shadow-romantic)',
+        'glow': 'var(--shadow-glow)',
+        'card-romantic': 'var(--shadow-card)',
+      },
+      transitionTimingFunction: {
+        'romantic': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       borderRadius: {
         lg: "var(--radius)",

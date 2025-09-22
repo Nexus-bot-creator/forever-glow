@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Romantic & Vibrant Design System - A Proposal To Someone Special */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme - Romantic Pastels */
+    --background: 320 50% 98%;
+    --foreground: 320 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 320 40% 96%;
+    --card-foreground: 320 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 320 40% 96%;
+    --popover-foreground: 320 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 315 80% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 280 60% 85%;
+    --secondary-foreground: 280 20% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 320 30% 92%;
+    --muted-foreground: 320 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 340 85% 70%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 320 25% 88%;
+    --input: 320 25% 88%;
+    --ring: 315 80% 65%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom Romantic Colors */
+    --rose-gold: 25 75% 75%;
+    --deep-purple: 280 65% 45%;
+    --electric-blue: 220 85% 65%;
+    --warm-pink: 340 80% 75%;
+    --sunset-orange: 15 85% 65%;
+    --lavender: 270 50% 80%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--warm-pink)), hsl(var(--rose-gold)));
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--deep-purple)), hsl(var(--electric-blue)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset-orange)), hsl(var(--warm-pink)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--accent) / 0.8));
+
+    /* Shadows & Effects */
+    --shadow-romantic: 0 20px 40px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 50px hsl(var(--accent) / 0.4);
+    --shadow-card: 0 10px 30px -5px hsl(var(--primary) / 0.2);
+
+    /* Animation Variables */
+    --transition-romantic: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +79,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme - Vibrant & Cosmic */
+    --background: 280 25% 8%;
+    --foreground: 320 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 20% 12%;
+    --card-foreground: 320 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 280 20% 12%;
+    --popover-foreground: 320 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 315 85% 70%;
+    --primary-foreground: 280 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 30% 20%;
+    --secondary-foreground: 320 20% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 280 25% 15%;
+    --muted-foreground: 320 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 340 90% 75%;
+    --accent-foreground: 280 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 280 20% 25%;
+    --input: 280 20% 25%;
+    --ring: 315 85% 70%;
+
+    /* Dark Theme Custom Colors */
+    --rose-gold: 25 80% 65%;
+    --deep-purple: 280 70% 55%;
+    --electric-blue: 220 90% 70%;
+    --warm-pink: 340 85% 75%;
+    --sunset-orange: 15 90% 65%;
+    --lavender: 270 60% 75%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--warm-pink)), hsl(var(--rose-gold)));
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--deep-purple)), hsl(var(--electric-blue)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--sunset-orange)), hsl(var(--warm-pink)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--accent) / 0.8));
+
+    /* Dark Shadows */
+    --shadow-romantic: 0 20px 40px -10px hsl(var(--primary) / 0.4);
+    --shadow-glow: 0 0 60px hsl(var(--accent) / 0.5);
+    --shadow-card: 0 10px 30px -5px hsl(var(--primary) / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +144,98 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Custom Cursor */
+  .custom-cursor {
+    @apply fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-50 mix-blend-difference;
+    background: hsl(var(--accent));
+    transition: var(--transition-romantic);
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor.hover {
+    @apply w-12 h-12;
+    background: var(--gradient-primary);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Romantic Button */
+  .btn-romantic {
+    @apply relative px-8 py-4 rounded-full font-semibold text-primary-foreground overflow-hidden;
+    background: var(--gradient-romantic);
+    box-shadow: var(--shadow-romantic);
+    transition: var(--transition-bounce);
+  }
+
+  .btn-romantic::before {
+    @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+    content: '';
+    background: var(--gradient-cosmic);
+  }
+
+  .btn-romantic:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-romantic:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from { box-shadow: 0 0 20px hsl(var(--accent) / 0.3); }
+    to { box-shadow: 0 0 40px hsl(var(--accent) / 0.6); }
+  }
+
+  /* Gallery Hover Effect */
+  .gallery-item {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .gallery-item::after {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    content: '';
+    background: var(--gradient-hero);
+  }
+
+  .gallery-item:hover::after {
+    @apply opacity-20;
   }
 }
