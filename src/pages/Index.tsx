@@ -37,6 +37,26 @@ const Index = () => {
         {/* Video Section */}
         <VideoSection />
         
+        {/* The Moment Section */}
+        <section id="the-moment" className="min-h-screen flex items-center justify-center py-20">
+          <div className="container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-5xl md:text-7xl font-bold mb-8 gradient-text">
+                The Moment
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                This is where our forever begins. A moment that will be etched in our hearts,
+                where time stands still and love speaks louder than words.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+        
         {/* Footer */}
         <footer className="py-12 text-center border-t border-border/50">
           <motion.div

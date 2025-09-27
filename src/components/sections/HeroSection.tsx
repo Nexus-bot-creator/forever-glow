@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroBackground from '@/assets/romantic-hero-bg.jpg';
 
 export const HeroSection = () => {
@@ -63,10 +64,16 @@ export const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <button className="btn-romantic interactive">
+              <Link 
+                to="/our-story"
+                className="btn-romantic interactive hover:scale-105 transition-all duration-300"
+              >
                 Our Story
-              </button>
-              <button className="btn-romantic interactive">
+              </Link>
+              <button 
+                onClick={() => document.getElementById('the-moment')?.scrollIntoView({ behavior: 'smooth' })}
+                className="btn-romantic interactive hover:scale-105 transition-all duration-300"
+              >
                 The Moment
               </button>
             </div>

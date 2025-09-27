@@ -238,4 +238,42 @@
   .gallery-item:hover::after {
     @apply opacity-20;
   }
+
+  /* Interactive hover scale */
+  .interactive:hover {
+    transform: scale(1.05);
+  }
+
+  /* Story text hover effects */
+  .story-text-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-text {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  .story-text:hover {
+    color: hsl(var(--accent));
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+  }
+
+  .story-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.1), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+  }
+
+  .story-text:hover::before {
+    left: 100%;
+  }
 }
