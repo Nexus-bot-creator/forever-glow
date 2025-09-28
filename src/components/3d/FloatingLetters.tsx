@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text3D, Center } from '@react-three/drei';
+import { Center } from '@react-three/drei';
 import { Group } from 'three';
 
 export const FloatingLetters = () => {
@@ -16,24 +16,52 @@ export const FloatingLetters = () => {
   return (
     <group ref={groupRef}>
       <Center>
-        <Text3D
-          font="/fonts/helvetiker_regular.typeface.json"
-          size={1.5}
-          height={0.3}
-          curveSegments={12}
-          bevelEnabled
-          bevelThickness={0.02}
-          bevelSize={0.02}
-          bevelOffset={0}
-          bevelSegments={5}
-        >
-          LOVE
-          <meshStandardMaterial 
-            color="#ff69b4" 
-            emissive="#ff1744" 
-            emissiveIntensity={0.2}
-          />
-        </Text3D>
+        {/* Create LOVE using geometric shapes */}
+        <group position={[-3, 0, 0]}>
+          {/* L */}
+          <mesh position={[-2, 0, 0]}>
+            <boxGeometry args={[0.3, 2, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          <mesh position={[-1.5, -0.85, 0]}>
+            <boxGeometry args={[1, 0.3, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          
+          {/* O */}
+          <mesh position={[-0.5, 0, 0]}>
+            <torusGeometry args={[0.6, 0.15, 8, 16]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          
+          {/* V */}
+          <mesh position={[0.8, 0.3, 0]} rotation={[0, 0, 0.3]}>
+            <boxGeometry args={[0.2, 1.2, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          <mesh position={[1.2, 0.3, 0]} rotation={[0, 0, -0.3]}>
+            <boxGeometry args={[0.2, 1.2, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          
+          {/* E */}
+          <mesh position={[2.5, 0, 0]}>
+            <boxGeometry args={[0.3, 2, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          <mesh position={[3, 0.85, 0]}>
+            <boxGeometry args={[0.8, 0.3, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          <mesh position={[3, 0, 0]}>
+            <boxGeometry args={[0.6, 0.3, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+          <mesh position={[3, -0.85, 0]}>
+            <boxGeometry args={[0.8, 0.3, 0.3]} />
+            <meshStandardMaterial color="#ff69b4" emissive="#ff1744" emissiveIntensity={0.2} />
+          </mesh>
+        </group>
       </Center>
       
       {/* Additional floating elements */}
