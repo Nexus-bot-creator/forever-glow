@@ -93,7 +93,7 @@ const Index = () => {
               className="mb-8"
             >
               <h3 className="text-xl font-semibold mb-6 gradient-text">
-                Does this proposal website actually exist? 🤔
+                Will you be my Better Half... ? 🤔
               </h3>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.button

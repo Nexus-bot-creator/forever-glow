@@ -14,25 +14,25 @@ export const GallerySection = () => {
   const [photos, setPhotos] = useState<Photo[]>([
     {
       id: '1',
-      src: 'src/assets/IMG-20250525-WA0011.jpg',
+      src: 'public/IMG-20250525-WA0011.jpg',
       alt: 'Beautiful couple moment',
       caption: 'Our first adventure together'
     },
     {
       id: '2',
-      src: 'src/assets/IMG-20250828-WA0113.jpg',
+      src: 'public/IMG-20250828-WA0113.jpg',
       alt: 'Romantic dinner',
       caption: 'That perfect evening'
     },
     {
       id: '3',
-      src: 'src/assets/Snapchat-353749387.jpg',
+      src: 'public/Snapchat-353749387.jpg',
       alt: 'Sunset together',
       caption: 'Watching the world together'
     },
     {
       id: '4',
-      src: 'src/assets/Snapchat-1900427176.jpg',
+      src: 'public/Snapchat-1900427176.jpg',
       alt: 'Holding hands',
       caption: 'Always by your side'
     },

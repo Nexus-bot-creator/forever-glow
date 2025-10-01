@@ -86,10 +86,8 @@ const OurStory = () => {
                 <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text">Chapter One</h2>
                 <div className="story-text-container">
                   <p className="story-text text-lg md:text-xl leading-relaxed text-foreground/90">
-                    In a world full of possibilities, our paths crossed like shooting stars in the night sky. 
-                    It was a moment that felt both magical and inevitable, as if the universe had been 
-                    orchestrating this meeting for lifetimes. Your smile lit up the room, and in that instant, 
-                    I knew my heart had found its home.
+                    I never thought i would meet someone like you in my whole life. The day I met you, it was just a normal day,
+                    nothing special. "Except you", you were gorgeous, curly hairs, big eyes, talkative(very much), and Beautiful.
                   </p>
                 </div>
               </motion.div>
@@ -106,9 +104,8 @@ const OurStory = () => {
                 <div className="story-text-container">
                   <p className="story-text text-lg md:text-xl leading-relaxed text-foreground/90">
                     Days turned into weeks, weeks into months, and with each passing moment, our bond grew stronger. 
-                    We discovered that love isn't just a feeling—it's a choice we make every day. Through laughter 
-                    and tears, adventures and quiet moments, we built something beautiful together. You became not 
-                    just my partner, but my best friend, my confidant, my everything.
+                    I was afraid to fall in love afer my past experience, but in the end , can't resist the urge to be with you
+                    for as much as I can (Bhaiya se pitne ke pehle..., Uske baad bhi sath hi hu 😂).
                   </p>
                 </div>
               </motion.div>
@@ -127,7 +124,7 @@ const OurStory = () => {
                     Now, as I look towards our future, I see endless chapters waiting to be written. 
                     I see adventures we haven't taken, dreams we haven't dreamed, and love we haven't 
                     even discovered yet. You are my today, my tomorrow, and all the days in between. 
-                    This is where our forever story truly begins.
+                    This is where our forever story truly begins. My Sweet Potato ✨.
                   </p>
                 </div>
               </motion.div>
