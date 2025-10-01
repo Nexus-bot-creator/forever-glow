@@ -14,14 +14,14 @@ export const VideoSection = () => {
   const [videos, setVideos] = useState<VideoItem[]>([
     {
       id: '1',
-      src: 'public/VN20251001_133438.mp4',
+      src: './VN20251001_133438.mp4',
       title: 'Our First Date',
       description: 'The day everything started',
       thumbnail: 'https://images.unsplash.com/photo-1511376777868-611b54f68947?w=600&h=400&fit=crop'
     },
     {
       id: '2',
-      src: 'public/VN20251001_133706.mp4',
+      src: './VN20251001_133706.mp4',
       title: 'Adventures Together',
       description: 'All our beautiful journeys',
       thumbnail: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop'
