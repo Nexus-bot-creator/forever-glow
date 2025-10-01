@@ -1,19 +1,28 @@
-import { Suspense } from 'react';
-import { CustomCursor } from '@/components/CustomCursor';
+import { Suspense, useState } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Scene3D } from '@/components/3d/Scene3D';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { GallerySection } from '@/components/sections/GallerySection';
 import { VideoSection } from '@/components/sections/VideoSection';
+import { CongratulationsDialog } from '@/components/CongratulationsDialog';
+import GradualBlur from '@/components/GradualBlur';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, CheckCircle, XCircle } from 'lucide-react';
 
 const Index = () => {
+  const [showCongratulations, setShowCongratulations] = useState(false);
+  const [noButtonClicked, setNoButtonClicked] = useState(false);
+
+  const handleYesClick = () => {
+    setShowCongratulations(true);
+  };
+
+  const handleNoClick = () => {
+    setNoButtonClicked(true);
+  };
+
   return (
     <div className="relative min-h-screen">
-      {/* Custom Cursor */}
-      <CustomCursor />
-      
       {/* Theme Toggle */}
       <ThemeToggle />
       
@@ -66,17 +75,68 @@ const Index = () => {
             viewport={{ once: true }}
             className="container mx-auto px-6"
           >
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center justify-center gap-2 mb-6">
               <Heart className="w-6 h-6 text-accent fill-current animate-pulse" />
               <span className="text-lg font-medium">Made with endless love</span>
               <Heart className="w-6 h-6 text-accent fill-current animate-pulse" />
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-8">
               Every love story is beautiful, but ours is my favorite ✨
             </p>
+            
+            {/* Interactive Question */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <h3 className="text-xl font-semibold mb-6 gradient-text">
+                Does this proposal website actually exist? 🤔
+              </h3>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleYesClick}
+                  className="btn-romantic flex items-center gap-2 px-6 py-3"
+                >
+                  <CheckCircle className="w-5 h-5" />
+                  Yes
+                </motion.button>
+                <button
+                  onClick={handleNoClick}
+                  className={`btn-romantic flex items-center gap-2 px-6 py-3 ${
+                    noButtonClicked ? 'runaway-button-click clicked' : 'runaway-button-dramatic'
+                  }`}
+                >
+                  <XCircle className="w-5 h-5" />
+                  No, this doesn't exist
+                </button>
+              </div>
+            </motion.div>
           </motion.div>
         </footer>
       </main>
+      
+      {/* Gradual Blur Effect for Footer */}
+      <GradualBlur
+        target="parent"
+        position="top"
+        height="4rem"
+        strength={1}
+        divCount={3}
+        curve="ease-in"
+        exponential={false}
+        opacity={0.7}
+      />
+      
+      {/* Congratulations Dialog */}
+      <CongratulationsDialog 
+        isOpen={showCongratulations} 
+        onClose={() => setShowCongratulations(false)} 
+      />
     </div>
   );
 };

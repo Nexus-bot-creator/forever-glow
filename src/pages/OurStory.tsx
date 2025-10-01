@@ -2,16 +2,13 @@ import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CustomCursor } from '@/components/CustomCursor';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { StoryScene3D } from '@/components/3d/StoryScene3D';
+import GradualBlur from '@/components/GradualBlur';
 
 const OurStory = () => {
   return (
     <div className="relative min-h-screen">
-      {/* Custom Cursor */}
-      <CustomCursor />
-      
       {/* Theme Toggle */}
       <ThemeToggle />
       
@@ -162,6 +159,18 @@ const OurStory = () => {
           </motion.div>
         </footer>
       </main>
+
+      {/* Gradual Blur Effect */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="6rem"
+        strength={1.5}
+        divCount={4}
+        curve="bezier"
+        exponential={true}
+        opacity={0.8}
+      />
     </div>
   );
 };

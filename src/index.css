@@ -180,22 +180,63 @@
     @apply relative px-8 py-4 rounded-full font-semibold text-primary-foreground overflow-hidden;
     background: var(--gradient-romantic);
     box-shadow: var(--shadow-romantic);
-    transition: var(--transition-bounce);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
   }
 
+  /* Shimmer effect */
   .btn-romantic::before {
-    @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 rounded-full opacity-0;
     content: '';
-    background: var(--gradient-cosmic);
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
   }
 
   .btn-romantic:hover::before {
     @apply opacity-100;
+    transform: translateX(100%);
   }
 
+  /* Glow pulse effect */
+  .btn-romantic::after {
+    @apply absolute inset-0 rounded-full opacity-0;
+    content: '';
+    background: var(--gradient-cosmic);
+    filter: blur(10px);
+    transition: all 0.4s ease;
+    z-index: -1;
+  }
+
+  .btn-romantic:hover::after {
+    @apply opacity-60;
+    transform: scale(1.1);
+  }
+
+  /* Main hover transform */
   .btn-romantic:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px) scale(1.08) rotate(1deg);
+    box-shadow: 
+      0 20px 40px -10px hsl(var(--primary) / 0.4),
+      0 0 60px hsl(var(--accent) / 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: linear-gradient(
+      135deg, 
+      hsl(var(--warm-pink)), 
+      hsl(var(--accent)), 
+      hsl(var(--rose-gold))
+    );
+  }
+
+  /* Active state */
+  .btn-romantic:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.1s ease;
   }
 
   /* Floating Animation */
@@ -275,5 +316,68 @@
 
   .story-text:hover::before {
     left: 100%;
+  }
+
+  /* Runaway button effect */
+  .runaway-button {
+    @apply relative transition-all duration-300 ease-out;
+    transform-origin: center;
+  }
+
+  .runaway-button:hover {
+    transform: translate(20px, -10px) rotate(5deg) scale(0.95);
+    opacity: 0.8;
+  }
+
+  .runaway-button:active {
+    transform: translate(30px, -15px) rotate(10deg) scale(0.9);
+    transition: all 0.1s ease;
+  }
+
+  /* Runaway button with clean effect */
+  .runaway-button-dramatic {
+    @apply relative cursor-pointer;
+    transform-origin: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .runaway-button-dramatic:hover {
+    transform: translate(40px, -15px) rotate(12deg) scale(0.85);
+    opacity: 0.7;
+  }
+
+  .runaway-button-dramatic:active {
+    transform: translate(60px, -25px) rotate(18deg) scale(0.75);
+    opacity: 0.5;
+    transition: all 0.2s ease;
+  }
+
+  /* Button that runs away on click */
+  .runaway-button-click {
+    @apply relative cursor-pointer;
+    transform-origin: center;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .runaway-button-click.clicked {
+    transform: translate(80px, -35px) rotate(25deg) scale(0.5);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  /* Subtle escape animation */
+  .runaway-button-dramatic {
+    animation: subtle-float 3s ease-in-out infinite;
+  }
+
+  @keyframes subtle-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+
+  .runaway-button-dramatic:hover {
+    animation: none;
   }
 }

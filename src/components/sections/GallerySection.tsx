@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Camera, Upload, Heart } from 'lucide-react';
 import { useState } from 'react';
+import GradualBlur from '@/components/GradualBlur';
 
 interface Photo {
   id: string;
@@ -13,25 +14,25 @@ export const GallerySection = () => {
   const [photos, setPhotos] = useState<Photo[]>([
     {
       id: '1',
-      src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=400&fit=crop',
+      src: 'src/assets/IMG-20250525-WA0011.jpg',
       alt: 'Beautiful couple moment',
       caption: 'Our first adventure together'
     },
     {
       id: '2',
-      src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=400&h=400&fit=crop',
+      src: 'src/assets/IMG-20250828-WA0113.jpg',
       alt: 'Romantic dinner',
       caption: 'That perfect evening'
     },
     {
       id: '3',
-      src: 'https://images.unsplash.com/photo-1518621012118-1d2cc6b3d49a?w=400&h=400&fit=crop',
+      src: 'src/assets/Snapchat-353749387.jpg',
       alt: 'Sunset together',
       caption: 'Watching the world together'
     },
     {
       id: '4',
-      src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=400&fit=crop',
+      src: 'src/assets/Snapchat-1900427176.jpg',
       alt: 'Holding hands',
       caption: 'Always by your side'
     },
@@ -126,6 +127,18 @@ export const GallerySection = () => {
           ))}
         </div>
       </div>
+
+      {/* Gradual Blur Effect */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="6rem"
+        strength={1.5}
+        divCount={4}
+        curve="ease-out"
+        exponential={false}
+        opacity={0.9}
+      />
     </section>
   );
 };

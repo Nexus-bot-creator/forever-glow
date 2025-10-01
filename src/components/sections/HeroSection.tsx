@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import GradualBlur from '@/components/GradualBlur';
 import heroBackground from '@/assets/romantic-hero-bg.jpg';
 
 export const HeroSection = () => {
@@ -48,7 +49,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            To Someone Special
+            ✨To My Sunshine✨
           </motion.p>
           
           <motion.div
@@ -59,20 +60,19 @@ export const HeroSection = () => {
           >
             <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
               Every love story is beautiful, but ours is my favorite. 
-              This space is dedicated to capturing our journey together 
-              and the moment that will change everything.
+              This is one of the many things that will make you fell for me even more.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Link 
                 to="/our-story"
-                className="btn-romantic interactive hover:scale-105 transition-all duration-300"
+                className="btn-romantic"
               >
                 Our Story
               </Link>
               <button 
                 onClick={() => document.getElementById('the-moment')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-romantic interactive hover:scale-105 transition-all duration-300"
+                className="btn-romantic"
               >
                 The Moment
               </button>
@@ -91,6 +91,18 @@ export const HeroSection = () => {
       <div className="absolute bottom-40 left-32 animate-bounce delay-150">
         <div className="w-5 h-5 bg-warm-pink rounded-full opacity-50" />
       </div>
+
+      {/* Gradual Blur Effect */}
+      <GradualBlur
+        target="parent"
+        position="bottom"
+        height="8rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential={true}
+        opacity={0.8}
+      />
     </section>
   );
 };
