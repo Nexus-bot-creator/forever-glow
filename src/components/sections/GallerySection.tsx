@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ThreeDHoverGallery from "@/components/ui/3d-hover-gallery";
 import { Camera, Upload, Heart } from 'lucide-react';
 import { useState } from 'react';
 import GradualBlur from '@/components/GradualBlur';
@@ -100,32 +101,13 @@ export const GallerySection = () => {
           </label>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {photos.map((photo, index) => (
-            <motion.div
-              key={photo.id}
-              className="gallery-item interactive group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative aspect-square">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" />
-                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm font-medium">{photo.caption}</p>
-                </div>
-                <Heart className="absolute top-4 right-4 w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* 3D Hover Gallery Grid */}
+        <ThreeDHoverGallery
+          images={photos.map(photo => photo.src)}
+          onImageClick={(index, image) => {
+            // Optionally show caption or do something on click
+          }}
+        />
       </div>
 
       {/* Gradual Blur Effect */}
