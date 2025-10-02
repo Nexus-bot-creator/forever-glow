@@ -71,11 +71,17 @@ export const ProposalButtons = () => {
               <PartyPopper className="w-16 h-16 text-white" />
             </div>
           </div>
-          
           <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-            Yay! 🎉
+            She said...🎉
+            <br />
           </h2>
-          
+          <div className="flex justify-center mb-6">
+            <img
+              src="./GIF by ReactionClub.gif"
+              alt="Yay Clipart"
+              className="w-80 h-80 object-contain drop-shadow-lg"
+            />
+          </div>
           <p className="text-2xl md:text-3xl text-white/90 max-w-2xl mx-auto font-light">
             You just made me the happiest person in the world! ❤️
           </p>
