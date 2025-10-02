@@ -60,10 +60,16 @@ const Index = () => {
               <h2 className="text-5xl md:text-7xl font-bold mb-8 gradient-text">
                 The Moment
               </h2>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
                 This is where our forever begins. A moment that will be etched in our hearts,
                 where time stands still and love speaks louder than words.
               </p>
+              <a
+                href="/Timeline"
+                className="inline-block px-8 py-4 rounded-2xl font-semibold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-romantic hover:scale-105 hover:shadow-glow transition-all duration-300 border-0 focus:outline-none focus:ring-2 focus:ring-pink-400"
+              >
+                From Where It Started
+              </a>
             </motion.div>
           </div>
         </section>
