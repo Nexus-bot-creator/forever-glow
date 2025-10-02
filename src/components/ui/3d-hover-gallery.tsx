@@ -40,7 +40,7 @@ const ThreeDHoverGallery: React.FC<ThreeDHoverGalleryProps> = ({
   itemHeight = 20,
   gap = 1.2,
   perspective = 50,
-  hoverScale = 15,
+  hoverScale = 8,
   transitionDuration = 1.25,
   backgroundColor,
   grayscaleStrength = 1,
