@@ -27,9 +27,9 @@ const OurStory = () => {
         <LightRays
           raysOrigin="top-center"
           raysColor="#00ffff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={4}
+          raysSpeed={1.9}
+          lightSpread={2}
+          rayLength={10}
           followMouse={true}
           mouseInfluence={0.5}
           noiseAmount={0.1}

@@ -9,6 +9,8 @@ import GradualBlur from '@/components/GradualBlur';
 import { motion } from 'framer-motion';
 import { Heart, CheckCircle, XCircle } from 'lucide-react';
 
+import { ProposalButtons } from '@/components/ProposalButtons';
+
 const Index = () => {
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [noButtonClicked, setNoButtonClicked] = useState(false);
@@ -95,26 +97,10 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-6 gradient-text">
                 Will you be my Better Half... ? 🤔
               </h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleYesClick}
-                  className="btn-romantic flex items-center gap-2 px-6 py-3"
-                >
-                  <CheckCircle className="w-5 h-5" />
-                  Yes
-                </motion.button>
-                <button
-                  onClick={handleNoClick}
-                  className={`btn-romantic flex items-center gap-2 px-6 py-3 ${
-                    noButtonClicked ? 'runaway-button-click clicked' : 'runaway-button-dramatic'
-                  }`}
-                >
-                  <XCircle className="w-5 h-5" />
-                  No, this doesn't exist
-                </button>
-              </div>
+                {/* ProposalButtons interactive section */}
+                <div className="flex justify-center items-center">
+                  <ProposalButtons />
+                </div>
             </motion.div>
           </motion.div>
         </footer>
