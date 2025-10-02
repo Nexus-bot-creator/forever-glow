@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { Heart, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { StoryScene3D } from '@/components/3d/StoryScene3D';
+// ...existing code...
 import GradualBlur from '@/components/GradualBlur';
+import LightRays from '@/components/LightRays';
 
 const OurStory = () => {
   return (
@@ -21,14 +22,21 @@ const OurStory = () => {
         <span>Back to Home</span>
       </Link>
       
-      {/* 3D Background Scene */}
-      <Suspense fallback={
-        <div className="fixed inset-0 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
-        </div>
-      }>
-        <StoryScene3D />
-      </Suspense>
+      {/* Light Rays Animation as background */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={4}
+          followMouse={true}
+          mouseInfluence={0.5}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        />
+      </div>
       
       {/* Main Content */}
       <main className="relative z-10">
@@ -70,8 +78,8 @@ const OurStory = () => {
           </div>
         </section>
 
-        {/* Story Content */}
-        <section className="py-20 relative">
+  {/* Story Content */}
+  <section className="py-20 relative">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto space-y-16">
               
